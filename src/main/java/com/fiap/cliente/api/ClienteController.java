@@ -22,9 +22,14 @@ public class ClienteController {
     }
 
 
-    @GetMapping()
-    public ResponseEntity<ClienteResponseDTO> buscaClientePorEmail(@RequestParam ("email") String email) {
+    @GetMapping("/email")
+    public ResponseEntity<ClienteResponseDTO> buscaClientePorEmail(@RequestParam("email") String email) {
         return ResponseEntity.ok(clienteService.buscaDadosCliente(email));
+    }
+
+    @GetMapping("/id")
+    public ResponseEntity<ClienteResponseDTO> buscaDadosClienteId(@RequestParam("id") String id) {
+        return ResponseEntity.ok(clienteService.buscaDadosClienteId(id));
     }
 
     @DeleteMapping

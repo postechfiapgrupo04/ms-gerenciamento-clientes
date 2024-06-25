@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 import static org.springframework.util.Assert.notNull;
 
 @Service
@@ -52,6 +54,19 @@ public class ClienteService {
             throw new BusinessException("Erro ao buscar dados de Cliente", e);
         }
     }
+
+    public ClienteResponseDTO buscaDadosClienteId(String id) {
+        try {
+            Optional<ClienteEntity> optionalEntity = clienteRepository.findById(id);
+            ClienteEntity entity = optionalEntity.orElseThrow(() -> new BusinessException("Cliente não encontrado"));
+            EnderecoEntity enderecoEntity = enderecoService.findByClienteId(entity.getId());
+
+            return clienteMapper.paraClienteResponseDTO(entity, enderecoEntity);
+        } catch (Exception e) {
+            throw new BusinessException("Erro ao buscar dados de Cliente", e);
+        }
+    }
+
 
     @Transactional
     public void deletaDadosCliente(String email) {
