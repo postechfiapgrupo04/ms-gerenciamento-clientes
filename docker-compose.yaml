@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  mscliente-mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: "mscliente"
+    ports:
+      - "27017:27017"
+
+  mscliente-api:
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mscliente-mongodb:27017/mscliente
+    ports:
+      - "8080:8080"
+
