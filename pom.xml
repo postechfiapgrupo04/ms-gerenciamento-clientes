@@ -61,7 +61,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.fiap.cliente.MainApplication</mainClass> <!-- Substitua pelo pacote e classe principal da sua aplicação -->
+                            <mainClass>com.fiap.cliente.ClientApplication</mainClass> <!-- Substitua pelo pacote e classe principal da sua aplicação -->
                         </manifest>
                     </archive>
                 </configuration>
