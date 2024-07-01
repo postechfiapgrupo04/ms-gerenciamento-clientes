@@ -1,0 +1,15 @@
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\business\ClienteService.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\api\response\EnderecoResponseDTO.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\ClientApplication.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\infrastructure\entity\EnderecoEntity.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\api\response\ClienteResponseDTO.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\infrastructure\entity\ClienteEntity.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\infrastructure\repository\ClienteRepository.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\infrastructure\exceptions\BusinessException.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\api\converter\ClienteMapper.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\infrastructure\repository\EnderecoRepository.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\api\request\EnderecoRequestDTO.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\api\ClienteController.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\api\converter\ClienteConverter.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\business\EnderecoService.java
+C:\Users\toqui\Desktop\ms-gerenciamento-clientes\src\main\java\com\fiap\cliente\api\request\ClienteRequestDTO.java
