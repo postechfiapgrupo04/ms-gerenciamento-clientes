@@ -17,10 +17,10 @@ COPY src ./src
 RUN mvn package
 
 # Copia o JAR construído para /app (ajustar o nome do arquivo conforme o que foi gerado pelo Maven)
-COPY target/cliente-0.0.1-SNAPSHOT.jar /app/clientes.jar
+COPY target/*.jar /app/cliente-0.0.1-SNAPSHOT.jar
 
 # Porta a ser exposta
 EXPOSE 8080
 
 # Comando para executar a aplicação
-CMD ["java", "-jar", "clientes.jar"]
+CMD ["java", "-jar", "cliente-0.0.1-SNAPSHOT.jar"]
