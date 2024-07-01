@@ -1,11 +1,25 @@
-FROM openjdk:17-slim
+FROM maven:3.8.5-openjdk-17-slim
 
+# Diretório de trabalho dentro do container
 WORKDIR /app
 
-COPY build/libs/*.jar /app/gReport.jar
+# Copia o arquivo pom.xml primeiro para aproveitar o cache de dependências do Maven
+COPY pom.xml .
 
-#RUN chmod +x /wait-for-it.sh
+# Baixa as dependências de compilação
+RUN mvn dependency:go-offline
 
+# Copia todo o código-fonte
+COPY src ./src
+
+# Compila o projeto e cria um JAR
+RUN mvn package
+
+# Copia o JAR construído para /app
+COPY target/*.jar /app/clientes.jar
+
+# Porta a ser exposta
 EXPOSE 8080
 
-CMD ["java", "-jar", "gReport.jar"]
+# Comando para executar a aplicação
+CMD ["java", "-jar", "clientes.jar"]
