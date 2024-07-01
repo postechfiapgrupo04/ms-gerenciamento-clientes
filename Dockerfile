@@ -1,3 +1,4 @@
+# Usa a imagem Maven com Java 17
 FROM maven:3.8.5-openjdk-17-slim
 
 # Diretório de trabalho dentro do container
@@ -6,7 +7,7 @@ WORKDIR /app
 # Copia o arquivo pom.xml primeiro para aproveitar o cache de dependências do Maven
 COPY pom.xml .
 
-# Baixa as dependências de compilação
+# Baixa as dependências de compilação (mas pode omitir esta linha se preferir)
 RUN mvn dependency:go-offline
 
 # Copia todo o código-fonte
@@ -16,7 +17,7 @@ COPY src ./src
 RUN mvn package
 
 # Copia o JAR construído para /app
-COPY *.jar /app/clientes.jar
+COPY target/*.jar /app/clientes.jar
 
 # Porta a ser exposta
 EXPOSE 8080
