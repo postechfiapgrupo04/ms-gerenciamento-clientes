@@ -16,7 +16,7 @@ COPY src ./src
 RUN mvn package
 
 # Copia o JAR construído para /app
-COPY target/*.jar /app/clientes.jar
+COPY *.jar /app/clientes.jar
 
 # Porta a ser exposta
 EXPOSE 8080
