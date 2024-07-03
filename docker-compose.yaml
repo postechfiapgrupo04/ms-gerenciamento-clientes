@@ -1,20 +1,20 @@
 version: "3.9"
 
 services:
-  mscliente-mongodb:
+  mongodb:
     image: mongo
-    environment:
-      MONGO_INITDB_DATABASE: "test"
     ports:
       - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: test
 
   mscliente-api:
     build:
       context: .
       dockerfile: Dockerfile
     environment:
-      SPRING_DATA_MONGODB_URI: mongodb://test-mongodb:27017/test
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/test
     ports:
       - "8080:8080"
     depends_on:
-      - test-mongodb
+      - mongodb
