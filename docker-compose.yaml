@@ -8,13 +8,13 @@ services:
     environment:
       MONGO_INITDB_DATABASE: test
 
-  mscliente-api:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/test
     ports:
-      - "8080:8080"
+      - "8004:8080"
     depends_on:
       - mongodb
