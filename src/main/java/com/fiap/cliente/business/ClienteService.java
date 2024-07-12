@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.springframework.util.Assert.notNull;
@@ -65,6 +66,16 @@ public class ClienteService {
         } catch (Exception e) {
             throw new BusinessException("Erro ao buscar dados de Cliente", e);
         }
+    }
+
+    public List<ClienteResponseDTO> findAllClientes() {
+        List<ClienteEntity> clientes = clienteRepository.findAll();
+        return clientes.stream()
+                .map(cliente -> {
+                    EnderecoEntity enderecoEntity = enderecoService.findByClienteId(cliente.getId());
+                    return clienteMapper.paraClienteResponseDTO(cliente, enderecoEntity);
+                })
+                .toList();
     }
 
 
