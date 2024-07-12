@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/user")
 @RequiredArgsConstructor
@@ -36,6 +38,12 @@ public class ClienteController {
     public ResponseEntity<Void> deletaDadosCliente(@RequestParam ("email") String email) {
         clienteService.deletaDadosCliente(email);
         return ResponseEntity.accepted().build();
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<ClienteResponseDTO>> buscaTodosClientes() {
+        List<ClienteResponseDTO> clientes = clienteService.findAllClientes();
+        return ResponseEntity.ok(clientes);
     }
 
 
