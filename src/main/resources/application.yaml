@@ -4,4 +4,9 @@ spring:
       host: localhost
       port: 27017
       database: mfclientes
+server:
+  compression:
+    enabled: 'true'
+  port: 8001
+  forward-headers-strategy: native
 
