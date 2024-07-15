@@ -4,6 +4,7 @@ package com.fiap.cliente.api;
 import com.fiap.cliente.api.request.ClienteRequestDTO;
 import com.fiap.cliente.api.response.ClienteResponseDTO;
 import com.fiap.cliente.business.ClienteService;
+import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,13 +25,13 @@ public class ClienteController {
     }
 
 
-    @GetMapping("/email")
+    @GetMapping("/email/{email}")
     public ResponseEntity<ClienteResponseDTO> buscaClientePorEmail(@RequestParam("email") String email) {
         return ResponseEntity.ok(clienteService.buscaDadosCliente(email));
     }
 
-    @GetMapping("/id")
-    public ResponseEntity<ClienteResponseDTO> buscaDadosClienteId(@RequestParam("id") String id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<ClienteResponseDTO> buscaDadosClienteId(@PathParam("id") String id) {
         return ResponseEntity.ok(clienteService.buscaDadosClienteId(id));
     }
 
